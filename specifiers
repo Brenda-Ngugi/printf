@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+
+void print_d(va_list args, int field_width, int precision)
+{
+	 int num = va_arg(args, int);
+   	 char num_str[20]; // assuming no more than 20 digits in the integer
+   	 sprintf(num_str, "%.*d", precision, num); // convert integer to string with specified precision
+	   	 int len = strlen(num_str);
+   	 int num_spaces = field_width - len;
+   	 if (num_spaces > 0) {
+       	 for (int i = 0; i < num_spaces; i++) {
+        	    putchar(' ');
+       	 }
+   		 }
+   	 printf("%s", num_str);
+}
+	int my_printf(const char* format, ...) {
+   	 va_list args;
+  	  va_start(args, format);
+  	  for (int i = 0; format[i] != '\0'; i++) {
+        	if (format[i] == '%') {
+       	     i++; // skip the '%'
+        	    int field_width = 0;
+         	   int precision = 0;
+           	 while (format[i] >= '0' && format[i] <= '9') {
+                	field_width = field_width * 10 + (format[i] - '0');
+           	     i++;
+           	 }
+          	  if (format[i] == '.') {
+                	i++; // skip the '.'
+           	     while (format[i] >= '0' && format[i] <= '9') {
+                	    precision = precision * 10 + (format[i] - '0');
+                 	   i++;
+               	 }
+           	 }
+           	 switch (format[i]) {
+                	case 'd':
+                  	  print_d(args, field_width, precision);
+                   	 break;
+           	     // other cases for other specifiers...
+               	 default:
+                	    // handle unknown specifier
+                   	 break;
+          	  }
+	        }
+        	else {
+           	 putchar(format[i]);
+    	    }
+ 	   }
+	    va_end(args);
+    return 0;
+}
