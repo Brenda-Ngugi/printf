@@ -4,22 +4,22 @@
  *@p: argument by get_spec
  *Return: Null
  */
-int (*get_spec(char p))(va_list))
+int (*get_spec(char p))(va_list)
 {
 	int i = 0;
-     
+
 	spec arr[] = {
 		{"c", print_c},
 		{"s", print_string},
-		{"%", print_%},
+		{" % ", print_perc},
 		{"d", print_decimal},
 		{"i", print_int},
 		{NULL, NULL}
 	};
 	while (arr[i].valid)
-	{               
-	if (p == arr[i].valid[0])        
-		return(arr[i]);              
+	{
+	if (p == arr[i].valid[0])
+		return (arr[i]);
 	i++;
 	}
 	return (NULL);
