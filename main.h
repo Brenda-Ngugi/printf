@@ -3,7 +3,6 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
-<<<<<<< HEAD
 /**
  *struct specifier
  *@valid: valid character
@@ -22,8 +21,4 @@ int print_string(va_list args);
 int print_c(va_list args);
 int print_decimal(va_list args);
 int print_int(va_list args);
-=======
-#include 
-
->>>>>>> c9043dd5a85d3f223e9819d88a0e80e65285f1b3
 #endif

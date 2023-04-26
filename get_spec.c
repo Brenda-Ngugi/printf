@@ -21,5 +21,6 @@ int (*get_spec(char p))(va_list)
 		if (p == arr[i].valid[0])
 			return(arr[i].v);
 		i++;
-	return (NULL);
+	}
+		return (0);
 }
