@@ -19,7 +19,7 @@ int (*get_spec(char p))(va_list)
 	while (arr[i].valid)
 	{
 		if (p == arr[i].valid[0])
-			return(arr[i].v);
+			return (arr[i].v);
 		i++;
 	}
 		return (0);
