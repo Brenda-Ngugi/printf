@@ -64,8 +64,7 @@ int print_per(va_list args)
  */
 int print_decimal(va_list args)
 {
-	unsigned int abs, count, np, holdn;
-	int n;
+	unsigned int np, holdn;
 
 	count = 0;
 	n = va_arg(args, int);
@@ -86,16 +85,17 @@ int print_decimal(va_list args)
 	}
 	while (holdn >= 1)
 	{
-		count += _putchar(((abs / holdn ) % 10) + '0');
+		count += _putchar(((abs / holdn) % 10) + '0');
 		holdn /= 10;
 	}
 	return (count);
 }
-/**print_int - checks and prints integer
+/**
+ *print_int - checks and prints integer
  *@args: int argument
  *Return: returns print_decimal
  */
 int print_int(va_list args)
 {
-	return(print_decimal(args));
+	return (print_decimal(args));
 }
