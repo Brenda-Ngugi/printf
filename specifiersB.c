@@ -1,41 +1,36 @@
 #include "main.h"
 #include<stdio.h>
 #include<stdarg.h>
+#include<stdlib.h>
+#include<math.h>
 /**
  * print_binary - prints an unsigned number
  * @args: binary argument
- * Return: Number printed
+ * Return: Count
  */
 int print_binary(va_list args)
 {
-	unsigned int c;
-	int i, j, count;
-	int *array;
+	unsigned int p;
+	int count, i;
+	int array[100];
 
-	c = va_arg(args, int)
-	i = 0;
-	if (c == 0)
+	p = va_arg(args, int);
+	count = 0;
+
+	if (p == 0)
 	{
-		putchar ('0');
+		_putchar('0');
 		return (1);
 	}
-	int c_bits = log2(c) + 1;
-
-	array = (int *)malloc(c_bits * sizeof(int));
-	if (array == NULL)
+	while (p > 0)
 	{
-		return (-1);
+		array[count] = p % 2;
+		p = p / 2;
+		count++;
 	}
-	while (c > 0)
+	for (i = count - 1; i >= 0; i++)
 	{
-		arr[i] = c % 2;
-		c = c / 2;
-		i++;
+		_putchar(array[i] + '0');
 	}
-	for (j = i - 1; j >= 0; j--)
-	{
-		_putchar(array[j] + '0');
-	}
-	free(array);
-	return (1);
+	return (count);
 }
