@@ -14,6 +14,7 @@ int (*get_spec(char p))(va_list)
 		{" % ", print_per},
 		{"d", print_decimal},
 		{"i", print_int},
+		{"b", print_binary},
 		{NULL, NULL}
 	};
 	while (arr[i].valid)

@@ -2,7 +2,6 @@
 #include<stdio.h>
 #include<stdarg.h>
 #include<stdlib.h>
-#include<math.h>
 /**
  * print_binary - prints an unsigned number
  * @args: binary argument
