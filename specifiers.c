@@ -57,9 +57,6 @@ int print_per(va_list args)
 /**
  *print_decimal - checks and prints a decimal
  *@args: decimal specifier
- *@abs: gets the absolute value of  anumber
- *@count: keeps track of printed characters
- *@n: holds the current specifier value
  *Return: count
  */
 int print_decimal(va_list args)
@@ -78,10 +75,10 @@ int print_decimal(va_list args)
 		abs = n;
 
 	holdn = 1;
-	np = abs;
-	while (np > 9)
+	absn = abs;
+	while (absn > 9)
 	{
-		np /= 10;
+		absn /= 10;
 		holdn *= 10;
 	}
 	while (holdn >= 1)
