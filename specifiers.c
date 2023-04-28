@@ -61,7 +61,7 @@ int print_per(va_list args)
  */
 int print_decimal(va_list args)
 {
-	unsigned int np, holdn, count, abs;
+	unsigned int absn, holdn, count, abs;
 	int n;
 
 	count = 0;
