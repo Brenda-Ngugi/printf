@@ -11,7 +11,7 @@ int (*get_spec(char p))(va_list)
 	spec arr[] = {
 		{"c", print_c},
 		{"s", print_string},
-		{" % ", print_per},
+		{"%", print_per},
 		{"d", print_decimal},
 		{"i", print_int},
 		{"b", print_binary},

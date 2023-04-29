@@ -27,7 +27,7 @@ int print_binary(va_list args)
 		p = p / 2;
 		count++;
 	}
-	for (i = count - 1; i >= 0; i++)
+	for (i = count - 1; i >= 0; i--)
 	{
 		_putchar(array[i] + '0');
 	}

@@ -34,7 +34,8 @@ int _printf(const char *format, ...)
 					if (checker)
 						count += checker(args);
 					else
-						count = _putchar(format[i]) + _putchar(format[i + 1]);
+						count = _putchar(format[i]) +
+							_putchar(format[i + 1]);
 					i += 2;
 				}
 			}
